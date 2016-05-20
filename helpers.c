@@ -16,7 +16,22 @@
  */
 bool search(int value, int values[], int n)
 {
-    // TODO: implement a searching algorithm
+    // Verify n is non-negative
+    if (n < 0)
+    {
+        return false;
+    }
+    
+    // Iterate through values looking for value
+    for (int i = 0; i < n; i++)
+    {
+        if (values[i] == value)
+        {
+            return value;
+        }
+    }
+    
+    // If neither of the above is satisfied, return false
     return false;
 }
 
