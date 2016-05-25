@@ -22,36 +22,16 @@ bool search(int value, int values[], int n)
         return false;
     }
     
-    // TODO: implement binary search; don't forget to return value
-    
-    // Define top and bottom boundary indecies of values
-    int top = n - 1;
-    int bottom  = 0;
-    
-    // Divide values in half until bounds are the same, or we find value
-    while (bottom <= top)
+    // Iterate through values looking for value
+    for (int i = 0; i < n; i++)
     {
-        // Define middle
-        int middle = (top + bottom) / 2;
-        
-        // See if middle == value
-        if (values[middle] == value)
+        if (values[i] == value)
         {
             return value;
         }
-        
-        // If value not found, figure out which half contains value; set new bounds
-        else if (value < values[middle])
-        {
-            top = middle - 1;
-        }
-        else if (value > values[middle])
-        {
-            bottom = middle + 1;
-        }
     }
-
-    // If none of the above is satisfied, return false
+    
+    // If neither of the above is satisfied, return false
     return false;
 }
 
